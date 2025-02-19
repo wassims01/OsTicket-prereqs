@@ -22,13 +22,17 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 
 <h2>List of Prerequisites</h2>
 
-- Item 1
-- Item 2
-- Item 3
-- Item 4
-- Item 5
+- Install IIS 
+- Install PHP Manager for IIS
+- Install Rewrite Module 
+- Create PHP Directory 
+- nstall Visual C++ Redistributable
+- Install MySQL
+- Enable Required PHP Extensions 
+
 
 <h2>Installation Steps</h2>
+Step 1: Create an Azure Virtual Machine
 
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
