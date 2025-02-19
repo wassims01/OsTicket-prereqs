@@ -38,7 +38,30 @@ Step 1: Create an Azure Virtual Machine
   <img src="https://i.imgur.com/tPtwjD9.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Log in to Azure Portal :
+
+  Go to Azure Portal and log in with your credentials.
+
+Create a Windows 10 VM :
+
+Click on "Create a resource" > "Virtual Machine" .
+Fill in the required details:
+Subscription : Choose your subscription.
+Resource Group : Create a new one or use an existing one.
+Virtual Machine Name : osticket-vm.
+Region : Choose your preferred region.
+Image : Select Windows 10 Pro, Version 22H2 - Gen2 (or the latest available version).
+Size : Choose a VM size with at least 4 vCPUs (e.g., Standard D4s v3).
+Username : labuser.
+Password : osTicketPassword1!.
+Networking Configuration :
+Ensure that Public inbound ports are set to allow RDP (3389) .
+Review + Create :
+Review all settings and click "Create" to deploy the VM.
+Connect to the VM via Remote Desktop :
+Once the VM is deployed, go to the VM's overview page.
+Click "Connect" > "RDP" .
+Download the RDP file and connect using the credentials 
 </p>
 <br />
 
