@@ -64,19 +64,96 @@ Click "Connect" > "RDP" .
 Download the RDP file and connect using the credentials 
 </p>
 <br />
+Step 2: Download and Unzip osTicket Installation Files
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/GfV4Hmr.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Install IIS :
+Open Server Manager .
+Click "Add roles and features" .
+In the Web Server (IIS) section, enable the following:
+World Wide Web Services > Application Development Features > CGI .
+Install PHP Manager for IIS :
+Navigate to the osTicket-Installation-Files folder.
+Run PHPManagerForIIS_V1.5.0.msi and follow the installation wizard.
+Install Rewrite Module :
+Run rewrite_amd64_en-US.msi from the same folder
 </p>
 <br />
 
+
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
+Step 3: Install and Configure IIS with CGI
+
+ <img src="https://i.imgur.com/fu8JC6W.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Install IIS :
+Open Server Manager .
+Click "Add roles and features" .
+In the Web Server (IIS) section, enable the following:
+World Wide Web Services > Application Development Features > CGI .
+Install PHP Manager for IIS :
+Navigate to the osTicket-Installation-Files folder.
+Run PHPManagerForIIS_V1.5.0.msi and follow the installation wizard.
+Install Rewrite Module :
+Run rewrite_amd64_en-US.msi from the same folder.
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Step 4: Set Up PHP
+  <img src="https://i.imgur.com/bkl9Rxj.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Create PHP Directory :
+Create a folder at C:\PHP.
+Unzip PHP :
+Extract php-7.3.8-nts-Win32-VC15-x86.zip into C:\PHP.
+Install Visual C++ Redistributable :
+Run VC_redist.x86.exe from the osTicket-Installation-Files folder.
+Register PHP in IIS :
+Open IIS as an administrator.
+Go to PHP Manager > Register new PHP version .
+Point to C:\PHP\php-cgi.exe.
+Reload IIS :
+Stop and start the IIS server from the IIS Manager.
+<p>
+
+  Step 5: Install osTicket
+
+  
+<img src="https://i.imgur.com/uxLjnEQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Prepare osTicket Files :
+Unzip osTicket-v1.15.8.zip from the osTicket-Installation-Files folder.
+Copy the upload folder into C:\inetpub\wwwroot.
+Rename upload to osTicket.
+Reload IIS :
+Stop and start the IIS server again.
+Enable Required PHP Extensions :
+Open IIS Manager.
+Go to Sites > Default Web Site > osTicket .
+Double-click PHP Manager .
+Enable the following extensions:
+php_imap.dll
+php_intl.dll
+php_opcache.dll.
+Rename ost-sampleconfig.php :
+Navigate to C:\inetpub\wwwroot\osTicket\include.
+Rename ost-sampleconfig.php to ost-config.php.
+Set Permissions for ost-config.php :
+Right-click ost-config.php > Properties > Security .
+Disable inheritance and remove all inherited permissions.
+Add a new permission for Everyone with Full Control .
+
 </p>
+Step 6: Complete osTicket Installation
+<img src="https://i.imgur.com/Rt1ooja.pngheight="80%" width="80%" alt="Disk Sanitization Steps"/>
+Access the Installation Page :
+Open a browser and go to http://localhost/osTicket/setup.
+Follow the on-screen instructions:
+Helpdesk Name: Enter a name for your helpdesk.
+Default Email: Enter an email address for customer support.
+MySQL Database: osTicket.
+MySQL Username: root.
+MySQL Password: root.
+Finalize Installation :
+Click "Install Now!" .
+If successful, you should see a confirmation message.
+
 <br />
